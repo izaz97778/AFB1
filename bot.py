@@ -11,9 +11,10 @@ BOT_TOKEN = os.environ.get("BOT_API_TOKEN")
 API_ID = int(os.environ.get("TG_API_ID")) if os.environ.get("TG_API_ID") else None
 API_HASH = os.environ.get("TG_API_HASH")
 
-app = Client("cfg-bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
-register_handlers(app)
+# Use in-memory session to avoid session time desync issues on Koyeb
+app = Client(":memory:", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
+register_handlers(app)
 fw = ForwardWorker(app)
 
 async def main():
