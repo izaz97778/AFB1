@@ -1,0 +1,5 @@
+pyrogram==2.0.37
+tgcrypto
+motor
+cryptography
+python-dotenv
