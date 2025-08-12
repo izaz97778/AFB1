@@ -1,5 +1,5 @@
-pyrogram==2.0.37
+pyrogram==2.0.106
 tgcrypto
+uvloop
 motor
-cryptography
 python-dotenv
